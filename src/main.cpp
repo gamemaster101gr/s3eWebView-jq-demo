@@ -50,9 +50,9 @@ int main (int argc, char* argv[])
 
 	webView = s3eWebViewCreate();
 	
-	s3eWebViewRegister(S3E_WEBVIEW_FAILED_LOADING,WebViewFailedLoading,0,webView);
+	/*s3eWebViewRegister(S3E_WEBVIEW_FAILED_LOADING,WebViewFailedLoading,0,webView);
 	s3eWebViewRegister(S3E_WEBVIEW_CUSTOM_URL_LOADING,WebViewUrlLoading,0,webView);
-	s3eWebViewRegister(S3E_WEBVIEW_FROM_JAVASCRIPT,WebViewFromJavascript,0,webView);
+	s3eWebViewRegister(S3E_WEBVIEW_FROM_JAVASCRIPT,WebViewFromJavascript,0,webView);*/
 
 	IwGxRegister(IW_GX_SCREENSIZE, rotationCallback);
 	s3eWebViewShow(webView, 0, 0, IwGxGetScreenWidth(), IwGxGetScreenHeight());
@@ -82,9 +82,9 @@ int main (int argc, char* argv[])
 		// Swap buffers
 		IwGxSwapBuffers();
 	}
-	s3eWebViewUnRegister(S3E_WEBVIEW_FAILED_LOADING,WebViewFailedLoading,webView);
+	/*s3eWebViewUnRegister(S3E_WEBVIEW_FAILED_LOADING,WebViewFailedLoading,webView);
 	s3eWebViewUnRegister(S3E_WEBVIEW_CUSTOM_URL_LOADING,WebViewUrlLoading,webView);
-	s3eWebViewUnRegister(S3E_WEBVIEW_FROM_JAVASCRIPT,WebViewFromJavascript,webView);
+	s3eWebViewUnRegister(S3E_WEBVIEW_FROM_JAVASCRIPT,WebViewFromJavascript,webView);*/
 	s3eWebViewDestroy(webView);
 
 	//IwGraphicsTerminate();
