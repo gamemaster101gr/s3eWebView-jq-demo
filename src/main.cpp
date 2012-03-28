@@ -24,13 +24,26 @@ int32 WebViewUrlLoading(s3eWebView *instance, void *systemData, void *userData)
 	if (strncmp(url, touchlink, strlen(touchlink)) == 0)
 	{
 		if (s3eOSExecAvailable())
+		{
 			s3eOSExecExecute("http://www.jqtouch.com/preview/demos/main/", true);
+		}
+		s3eWebViewNavigate(webView,  "rom://www/index.html");
+		return 0;
 	}
 	const char* mobilelink = "s3e://jqmobile";
 	if (strncmp(url, mobilelink, strlen(mobilelink)) == 0)
 	{
 		if (s3eOSExecAvailable())
+		{
 			s3eOSExecExecute("http://jquerymobile.com/demos/1.1.0-rc.1/", true);
+		}
+		s3eWebViewNavigate(webView,  "rom://www/index.html");
+		return 0;
+	}
+	const char* quitlink = "s3e://quit";
+	if (strncmp(url, quitlink, strlen(quitlink)) == 0)
+	{
+		continueApp = false;
 	}
 	
 	return 0;
@@ -94,9 +107,9 @@ int main (int argc, char* argv[])
 		// Start with no lighting
 		//IwGxLightingOff();
 		// End drawing
-		IwGxFlush();
+		//IwGxFlush();
 		// Swap buffers
-		IwGxSwapBuffers();
+		//IwGxSwapBuffers();
 	}
 	/*s3eWebViewUnRegister(S3E_WEBVIEW_FAILED_LOADING,WebViewFailedLoading,webView);
 	*/

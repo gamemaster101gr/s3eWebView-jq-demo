@@ -8,6 +8,7 @@ assets
 {
 	(./data)
 www\index.html
+www\construct2
 www\jqmobile\index.html
 www\jqmobile\css\structure\jquery.mobile.button.css
 www\jqmobile\css\structure\jquery.mobile.collapsible.css
@@ -688,10 +689,6 @@ deployments
 	win32-pref-windowtitle="s3eWebView jQ Demo"
 	assets=Default
 	version="0.0.1"
-}
 
-#### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
-
-deployments
-{
+	android-manifest="keys/AndroidManifest.xml"
 }
